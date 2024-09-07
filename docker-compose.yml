@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  ptvgroupswebapi:
+    image: ${DOCKER_REGISTRY-}ptvgroupswebapi
+    build:
+      context: .
+      dockerfile: PTVGroups\Dockerfile
+      extra_hosts:
+      - "host.docker.internal:172.27.48.1"

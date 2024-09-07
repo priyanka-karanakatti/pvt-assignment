@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ptvgroupswebapi
+  name: ptvgroupswebapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ptvgroupswebapi
+  template:
+    metadata:
+      labels:
+        app: ptvgroupswebapi
+    spec:
+      containers:
+        - image: ptvgroupswebapi
+          name: ptvgroupswebapi
+      restartPolicy: Always
